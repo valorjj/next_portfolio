@@ -1,6 +1,8 @@
 /** @format */
 
 import React from 'react';
+import { renderAsync } from '@react-email/render';
+
 import {
 	Html,
 	Body,
@@ -21,7 +23,7 @@ type ContactFormEmailProps = {
 	senderEmail: string;
 };
 
-export const ContactFormEmail = ({
+export const ContactFormEmail = async ({
 	message,
 	senderEmail,
 }: ContactFormEmailProps) => {
