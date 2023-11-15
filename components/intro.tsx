@@ -67,10 +67,10 @@ const Intro = () => {
 				<span className='font-bold'>백엔드 개발자</span> 입니다.{' '}
 				<span>
 					아직 경력은 얼마 안된 신입이지만, 실력을 기르기 위해 열심히 노력하고
-					있어요.
+					있어요.{' '}
 				</span>
 				관심사는{' '}
-				<span className='underline'>
+				<span className='font-bold'>
 					스프링부트 JPA MSA AWS Docker Kubernetes React.js
 				</span>{' '}
 				입니다.
