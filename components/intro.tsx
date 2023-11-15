@@ -67,12 +67,11 @@ const Intro = () => {
 				<span className='font-bold'>백엔드 개발자</span> 입니다.{' '}
 				<span>
 					아직 경력은 얼마 안된 신입이지만, 실력을 기르기 위해 열심히 노력하고
-					있어요. 프론트엔드 프레임워크 기술을 익히기 위해{' '}
+					있어요.
 				</span>
-				<span className='italic'>Nextjs</span> 를 사용해 포트폴리오 사이트를
-				만드는 중입니다. 관심사는{' '}
+				관심사는{' '}
 				<span className='underline'>
-					스프링부트 MySQL JPA MSA AWS Docker Kubernetes
+					스프링부트 JPA MSA AWS Docker Kubernetes React.js
 				</span>{' '}
 				입니다.
 			</motion.h1>
