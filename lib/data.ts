@@ -6,8 +6,9 @@ import { FaPencilAlt } from 'react-icons/fa';
 import { MdOutlineWork } from 'react-icons/md';
 
 import nextblog from '@/public/nextblog.png';
-import rmtdevImg from '@/public/rmtdev.png';
-import wordanalyticsImg from '@/public/wordanalytics.png';
+import msa2 from '@/public/msa_2.png';
+import oauth2 from '@/public/oauth2.png';
+import chat from '@/public/chat.png';
 
 // ts 에서 배열 선언 후, as const 붙여주기
 export const links = [
@@ -64,43 +65,68 @@ export const experiencesData = [
 
 export const projectsData = [
 	{
+		title: '스프링 마이크로서비스 아키텍쳐',
+		description: 'GKE, Jenkins, Github 을 연동한 CI/CD 과정을 구현',
+		tags: [
+			'Spring Boot',
+			'Docker',
+			'Kubernetes',
+			'GCP',
+			'Jenkins',
+			'Zipkin',
+			'Grafana',
+			'MySQL',
+		],
+		imageUrl: msa2,
+		id: 1,
+		giturl: 'https://valorjj.github.io/posts/msa__01/',
+	},
+	{
+		title: 'OAuth 2.0',
+		description: '스프링 시큐리티, OAuth 2.0, JWT 전반에 대한 학습',
+		tags: ['Spring Boot', 'OAuth 2.0', 'Spring Security', 'JWT'],
+		imageUrl: oauth2,
+		id: 2,
+		giturl: 'https://github.com/valorjj/jwt-backend',
+	},
+	{
 		title: 'Next.js 블로그',
-		description:
-			'Next.js 13 과 몽고DB, 파이어베이스, 프리즈마를 이용한 간단한 블로그를 만들어봤습니다.',
+		description: 'Next.js, MongoDB, Firebase, Prisma 로 만든 블로그',
 		tags: ['Next.js', 'MongoDB', 'Prisma', 'Firebase'],
 		imageUrl: nextblog,
-		id: 1,
-	},
-	{
-		title: '스프링 마이크로서비스 아키텍쳐',
-		description:
-			'Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.',
-		tags: ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Redux'],
-		imageUrl: rmtdevImg,
-		id: 2,
-	},
-	{
-		title: 'Word Analytics',
-		description:
-			'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
-		tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
-		imageUrl: wordanalyticsImg,
 		id: 3,
+		giturl: 'https://github.com/valorjj/nextjs_blog',
+	},
+	{
+		title: 'WebSocket 을 이용한 채팅',
+		description: 'WebSocket, Stomp 사용한 실시간 채팅',
+		tags: ['Spring Boot', 'WebSocket', 'STOMP', 'Thymeleaf'],
+		imageUrl: chat,
+		id: 4,
+		giturl: 'https://github.com/valorjj/websocket-chat-demo',
 	},
 ] as const;
 
 export const skillsData = [
 	'Spring Boot',
+	'Thymeleaf',
 	'AWS',
 	'Docker',
+	'Jenkins',
+	'Eureka',
+	'Spring Security',
+	'JWT',
+	'Google Cloud Platform',
+	'Kubernetes',
+	'Keycloak',
+	'MySQL',
 	'JPA',
 	'HTML',
 	'CSS',
 	'JavaScript',
 	'TypeScript',
-	'React',
+	'React.js',
 	'Next.js',
-	'Node.js',
 	'Git',
 	'Tailwind',
 	'Prisma',

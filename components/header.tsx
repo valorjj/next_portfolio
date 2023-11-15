@@ -32,7 +32,8 @@ const Header = () => {
 			<nav className='flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0'>
 				<ul
 					className='flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem]
-        font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5'
+        font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5
+				'
 				>
 					{links.map((link) => (
 						<motion.li
@@ -45,7 +46,7 @@ const Header = () => {
 								href={link.hash}
 								// clsx 를 사용해서 스타일 적용 시, 조건을 부여할 수 있다.
 								className={clsx(
-									'flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300',
+									'flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-300 dark:hover:text-gray-200',
 									{
 										'text-gray-950 dark:text-gray-200':
 											activeSection === link.name,
@@ -61,8 +62,8 @@ const Header = () => {
 								{/* inset-0: 모든 방향을 0 으로 지정 */}
 								{link.name === activeSection && (
 									<motion.span
-										className='bg-gray-100 rounded-full absolute inset-0 -z-10
-										dark:bg-gray-800
+										className='
+										bg-gray-300 rounded-full absolute inset-0 -z-10 dark:bg-gray-800
 										'
 										// layoutId 를 부여해 목적지를 정한다.
 										layoutId='activeSession'
