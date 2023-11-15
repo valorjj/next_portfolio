@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- @format -->
 
-## Getting Started
+# Server VS Client Components
 
-First, run the development server:
+| 구분                                                 | 서버 | 클라이언트 |
+| ---------------------------------------------------- | ---- | ---------- |
+| 데이터 fetch                                         | 👌   | 💩         |
+| 직접적인 백엔드 자원 접근                            | 👌   | 💩         |
+| 토큰, API 키 등 민감한 정보를 서버에 저장            | 👌   | 💩         |
+| 많은 의존성을 서버에 저장                            | 👌   | 💩         |
+| 상호작용과 이벤트 리스너 사용                        | 💩   | 👌         |
+| 브라우저에서만 사용가능한 API 사용 가능?             | 💩   | 👌         |
+| useState, useEffect 에 의존하는 커스텀 훅 사용 가능? | 💩   | 👌         |
+| React Class 컴포넌트 사용 가능?                      | 💩   | 👌         |
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+`'use client'` 사용 시, React Tree 에 boundary 가 생성된다.
+해당 컴포넌트에서 호출한 다른 컴포넌트는 boundary 안에 속하기 때문에, client 컴포넌트가 된다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 진행 중 메모
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Hydration 과정 중, state 변경은 위험하기 때문에 useEffect 훅을 사용한다. 해당 프로젝트는 ActiveSection 상태를 기준으로 여러 동작이 정해진다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- data.ts 에서 가져오는 데이터 [] as const 가 존재하기 때문에, 아무 string 만 되는 것이 아니라 정확히 배열에 존재하는 값만 들어갈 수 있다.
 
-## Learn More
+- Intro 안에 있는 내용들 처럼 연관되어 있는 경우 div 말고 section 태그 사용
 
-To learn more about Next.js, take a look at the following resources:
+- `useEffect` 를 사용하는 이유
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - 외부 환경과 동기화하기 위해서!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `scroll-mt-28`
 
-## Deploy on Vercel
+## vertical-timeline
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`npm i --save-dev @types/react-vertical-timeline-component`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## resend
+
+## react-hot-toast
+
+> 에러 핸들링

@@ -7,12 +7,18 @@ import Link from 'next/link';
 import { BsArrowRight, BsGithub } from 'react-icons/bs';
 import { FaBlog } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
+import { useSectionInView } from '@/lib/hooks';
+import { useActiveSectionContext } from '@/context/active-session-context';
 
 const Intro = () => {
-	// Intro 안에 있는 내용들 처럼 연관되어 있는 경우
-	// div 말고 section 태그 사용
+	const { ref } = useSectionInView('Home', 0.5);
+	const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 	return (
-		<section className='mb-28 max-w-[50rem] text-center sm:mb-0'>
+		<section
+			ref={ref}
+			id='home'
+			className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'
+		>
 			<div className='flex items-center justify-center'>
 				<div className='relative'>
 					<motion.div
@@ -64,7 +70,7 @@ const Intro = () => {
 					있어요. 프론트엔드 프레임워크 기술을 익히기 위해{' '}
 				</span>
 				<span className='italic'>Nextjs</span> 를 사용해 포트폴리오 사이트를
-				만드는 중입니다. 주 관심사는{' '}
+				만드는 중입니다. 관심사는{' '}
 				<span className='underline'>
 					스프링부트 MySQL JPA MSA AWS Docker Kubernetes
 				</span>{' '}
@@ -82,6 +88,10 @@ const Intro = () => {
 					href='#contact'
 					className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none 
 					focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition'
+					onClick={() => {
+						setActiveSection('Contact');
+						setTimeOfLastClick(Date.now());
+					}}
 				>
 					Contact me here
 					<BsArrowRight className='opacity-70 group-hover:translate-x-1 transition' />
@@ -90,7 +100,7 @@ const Intro = () => {
 				<a
 					className='group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none 
 					focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer
-					border-black/10'
+					borderBlack dark:bg-white/10'
 					href='/CV.pdf'
 					download
 				>
@@ -99,7 +109,7 @@ const Intro = () => {
 				</a>
 				<a
 					className='bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none 
-				focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border-black/10'
+				focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:text-white/60 dark:bg-white/10'
 					href='https://github.com/valorjj'
 					target='_blank'
 				>
@@ -107,7 +117,7 @@ const Intro = () => {
 				</a>
 				<a
 					className='bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full outline-none 
-				focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border-black/10'
+				focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:text-white/60 dark:bg-white/10'
 					href='https://valorjj.github.io/'
 					target='_blank'
 				>
